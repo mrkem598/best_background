@@ -1,0 +1,75 @@
+﻿
+$index_canvas:8;
+$index_html:-21;
+$index_container:-19;
+$mix-canvas:difference;
+$mix-html:exclusion;
+$mix-container:difference;
+$invert_canvas:1;
+$invert_container:1;
+$invert_html:0;
+
+
+
+html{
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(30deg,
+    hsla(360, 55%, 34%,  1),
+    hsla(342, 40%, 49%, 1) ,
+    hsla(78, 50%, 59%, 1),
+    hsla(340, 47%, 59%, 1) 85%,
+    hsla(340, 77%, 29%, 1) 
+    );
+   
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index:$index_html;
+  width: 100%;
+  height:100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter:$invert_html hue-rotate(18deg);
+  mix-blend-mode:$mix-html;
+  filter:contrast(1.2);
+   
+   
+}
+
+canvas{
+  position:absolute;
+  padding: 0;
+  margin: 0;
+  width:100%;
+  z-index:$index_canvas;
+  top:0;
+  left:0;
+  height:100%;
+  overflow: hidden;
+  filter:$invert_canvas;
+  mix-blend-mode:$mix_canvas; 
+  filter:contrast(1.2);
+  animation:appear  2s 1 forwards ease-in 
+}
+
+.container{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top:0;
+    left:0;
+    z-index:$index_container;
+    filter:$invert_container;
+    mix-blend-mode:$mix-container;  
+    animation:appear  1s 1 forwards ease-in 
+}
+
+@keyframes appear{
+  100%{
+    opacity:1;
+    
+  }
+}
