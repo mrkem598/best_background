@@ -11,7 +11,7 @@ var theClock;
 var correctTally = 0;
 var incorrectTally = 0;
 var unansweredTally = 0;
-var clickSound = new Audio("sound/button-click.mp3");
+
 
 $(document).ready(function() {
 // Create a function that creates the start button and initial screen
